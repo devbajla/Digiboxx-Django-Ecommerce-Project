@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Create User</title>
+  </head>
+  <body>
+    <center>
+        <h1>Add New User</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <table border="1">
+                <tr>
+                    <td>Name</td>
+                    <td><input type ="text" placeholder="Name" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td><input type ="text" placeholder="Mobile" name="mobile"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type ="text" placeholder="Email" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type ="text" placeholder="Password" name = "password"></td>
+                </tr>
+            </table>
+            <input type="submit" value="create"/>
+            <hr/>
+            {% if messages %}
+            {% for result in messages%}
+            <b style="green">{{result}}
+            {% endfor %}
+            {% endif %}
+        </form>
+        <p>
+        <a href="{% url 'log_in' %}">Log in</a>
+        <p>
+        <a href="{% url 'home' %}">Home</a>
+    </center>
+  </body>
+</html>

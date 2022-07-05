@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Landing Page</h1>
+<p>You currently have a book borrowed. You must return it before borrowing a new book</p>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Stock</th>
+        <th>Status</th>
+
+    </tr>
+
+    <tr> 
+        <td>{{ book.book }}</td>
+        <td>{{ book.stock }}</td>
+        <td>Borrowed</td>
+        
+    </tr>
+</table>
+
+<p>
+
+<a href="{% url 'return_book' %}">Return book</a>
+
+<p>
+
+<a href="{% url 'history' %}">View order history</a>
+<p>
+
+<a href="{% url 'home' %}">Home</a>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Order History</h1>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Stock</th>
+        <th>Status</th>
+
+    </tr>
+
+    <tr> 
+    {% for order in orders %}
+        
+        <tr> 
+        <td>{{ order.product.book }}</td>
+        <td>{{ order.product.stock }}</td>
+
+        {%if order.status%}
+        <td>Borrowed</td>
+        {% else %}
+        <td>Returned</td>
+        {% endif %}
+        </tr>
+    {% endfor %}
+
+</table>
+
+<p>
+
+<a href="{% url 'landing' %}">Back</a>
+
+<a href="{% url 'home' %}">Home</a>
+
+</body>
+</html>
